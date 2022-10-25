@@ -7,34 +7,6 @@ public class Solution {
         
         int n = arr.Count;
         
-//         var prev = new int[1 << n];
-//         var curr = new int[1 << n];
-        
-//         for(int i = 0; i < n; ++i){
-            
-//             for(int j = 0; j < (1 << n); ++j){
-                
-//                 int ans =0;
-//                 if(IsPossibleToUse(i,j,arr)){
-                    
-//                     int newVisited = (j | (1 << i));
-//                     ans = Math.Max((arr[i].Length +  prev[newVisited]) , prev[j]);
-//                 } 
-//                 else{
-//                     ans = prev[j];
-//                 }
-                
-//                 curr[j] = ans;
-//             }
-            
-//             prev = curr;
-//             curr = new int[1 << n];
-//         }
-        
-//         return prev[0];
-        
-        
-        
         dp = new Dictionary<int,int>[n];
         
         for(int i =0; i < n; ++i){
@@ -55,6 +27,7 @@ public class Solution {
         }
         
         int ans = 0;
+        
         if(IsPossible(i , visited, arr)){
             
             int newVisited = visited;
@@ -94,61 +67,5 @@ public class Solution {
         }
         
         return true;
-        
-
     }
-    
-//     bool IsPossibleToUse(int i , int visited, IList<string> arr){
-        
-//         var word = arr[i];
-        
-//         if(IsDuplicate(word)){
-//             return false;
-//         }
-        
-        
-        
-//         for(int k = 0; k < arr.Count; ++k){
-//             if((visited & (1 << k)) != 0){
-                
-//                 var wordToCompare = arr[k];
-                
-//                 if(isConflict(word,wordToCompare)){
-//                     return false;
-//                 }
-//             }
-//         }
-
-//         return true;
-//     }
-    
-//     bool isConflict(string a, string b){
-//         var hset = new HashSet<char>();
-        
-//         for(int i =0; i < a.Length; ++i){
-//             hset.Add(a[i]);
-//         }
-        
-//         for(int i = 0; i < b.Length; ++i){
-//             if(hset.Contains(b[i])){
-//                 return true;
-//             }
-//         }
-        
-//         return false;
-//     }
-    
-//     bool IsDuplicate(string a){
-//         var hset = new HashSet<char>();
-        
-//         for(int i =0; i < a.Length; ++i){
-//             if(hset.Contains(a[i])){
-//                 return true;
-//             }
-            
-//             hset.Add(a[i]);
-//         }
-        
-//         return false;
-//     }
 }
