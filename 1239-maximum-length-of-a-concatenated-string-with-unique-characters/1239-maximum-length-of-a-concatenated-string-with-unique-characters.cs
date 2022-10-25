@@ -98,57 +98,57 @@ public class Solution {
 
     }
     
-    bool IsPossibleToUse(int i , int visited, IList<string> arr){
+//     bool IsPossibleToUse(int i , int visited, IList<string> arr){
         
-        var word = arr[i];
+//         var word = arr[i];
         
-        if(IsDuplicate(word)){
-            return false;
-        }
+//         if(IsDuplicate(word)){
+//             return false;
+//         }
         
         
         
-        for(int k = 0; k < arr.Count; ++k){
-            if((visited & (1 << k)) != 0){
+//         for(int k = 0; k < arr.Count; ++k){
+//             if((visited & (1 << k)) != 0){
                 
-                var wordToCompare = arr[k];
+//                 var wordToCompare = arr[k];
                 
-                if(isConflict(word,wordToCompare)){
-                    return false;
-                }
-            }
-        }
+//                 if(isConflict(word,wordToCompare)){
+//                     return false;
+//                 }
+//             }
+//         }
 
-        return true;
-    }
+//         return true;
+//     }
     
-    bool isConflict(string a, string b){
-        var hset = new HashSet<char>();
+//     bool isConflict(string a, string b){
+//         var hset = new HashSet<char>();
         
-        for(int i =0; i < a.Length; ++i){
-            hset.Add(a[i]);
-        }
+//         for(int i =0; i < a.Length; ++i){
+//             hset.Add(a[i]);
+//         }
         
-        for(int i = 0; i < b.Length; ++i){
-            if(hset.Contains(b[i])){
-                return true;
-            }
-        }
+//         for(int i = 0; i < b.Length; ++i){
+//             if(hset.Contains(b[i])){
+//                 return true;
+//             }
+//         }
         
-        return false;
-    }
+//         return false;
+//     }
     
-    bool IsDuplicate(string a){
-        var hset = new HashSet<char>();
+//     bool IsDuplicate(string a){
+//         var hset = new HashSet<char>();
         
-        for(int i =0; i < a.Length; ++i){
-            if(hset.Contains(a[i])){
-                return true;
-            }
+//         for(int i =0; i < a.Length; ++i){
+//             if(hset.Contains(a[i])){
+//                 return true;
+//             }
             
-            hset.Add(a[i]);
-        }
+//             hset.Add(a[i]);
+//         }
         
-        return false;
-    }
+//         return false;
+//     }
 }
